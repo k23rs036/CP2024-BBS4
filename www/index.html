@@ -57,7 +57,7 @@ function updateCharacterCount(inputId, counterId, maxLength) {
     
     input.on('input', () => {
         const length = input.val().length;
-        counter.text(`${length}/${maxLength}`);
+       // counter.text(`${length}/${maxLength}`);
     
         if (length > maxLength) {
             counter.addClass('error');
@@ -549,6 +549,12 @@ window.addEventListener('unload', function() {
 
         <!-- 投稿フォーム（ログイン時表示） -->
         <div class="post-form logged-in">
+             <div class="form-group">
+                <label for="authorInput">お名前</label>
+                <input type="text" id="authorInput" 
+                       class="form-control" placeholder="お名前">
+                <small class="character-count" id="authorCount">0/20</small>
+            </div>
             <div class="form-group">
                 <label for="contentInput">投稿内容</label>
                 <textarea id="contentInput" class="form-control" 
