@@ -73,8 +73,8 @@ function validateContent(content) {
         showMessage('投稿内容を入力してください', 'error');
         return false;
     }
-    if (content.length > 1000) {
-        showMessage('投稿内容は1000文字以内で入力してください', 'error');
+    if (content.length > 200) {
+        showMessage('投稿内容は200文字以内で入力してください', 'error');
         return false;
     }
     return true;
@@ -475,7 +475,7 @@ $(function() {
      });
 
     // 文字数カウンターの初期化
-    updateCharacterCount('contentInput', 'contentCount', 1000);
+    updateCharacterCount('contentInput', 'contentCount', 200);
 
     // 投稿処理
     $('#postButton').on('click', function() {
@@ -594,7 +594,7 @@ window.addEventListener('unload', function() {
             <div class="modal-body">
                 <div class="form-group">
                     <textarea id="editContent" class="form-control"></textarea>
-                    <small class="character-count" id="editContentCount">0/1000</small>
+                    <small class="character-count" id="editContentCount">0/200</small>
                 </div>
             </div>
             <div class="modal-footer">
